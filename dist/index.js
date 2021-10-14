@@ -15,7 +15,7 @@ var tinybirdTrackerURL = 'https://cdn.tinybird.co/static/js/t.js';
 function TinybirdProvider(props) {
     return (React__default["default"].createElement(React__default["default"].Fragment, null,
         React__default["default"].createElement(Head__default["default"], null,
-            React__default["default"].createElement("script", { async: true, "data-token": props.token, "data-source": props.dataSource, "data-domain": props.domain || tinybirdDomain, src: props.trackerURL || tinybirdTrackerURL })),
+            React__default["default"].createElement("script", { async: true, "data-token": props.token, "data-source": props.dataSource, "data-api": props.api || tinybirdDomain, src: props.trackerURL || tinybirdTrackerURL })),
         props.children));
 }
 function useTinybird() {
