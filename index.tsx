@@ -14,29 +14,32 @@ export default function TinybirdProvider(props: {
   return (
     <>
       <Head>
-        <script async data-token={props.token} data-source={props.dataSource} data-api={props.api || tinybirdDomain} src={props.trackerURL || tinybirdTrackerURL}></script>
+        <script 
+          async
+          data-token={props.token}
+          data-source={props.dataSource}
+          data-api={props.api || tinybirdDomain}
+          src={props.trackerURL || tinybirdTrackerURL}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.tinybird = window.tinybird || function() { (window.tinybird.q = window.tinybird.q || []).push(arguments) }`,
+          }}
+        />
       </Head>
       {props.children}
     </>
   )
 }
 
-
 type Props = Record<string, unknown> | never
-type EventOptions<P extends Props> = {
-  props: P
-  callback?: VoidFunction
-}
-type EventOptionsTuple<P extends Props> = P extends never
-  ? [Omit<EventOptions<P>, 'props'>?]
-  : [EventOptions<P>]
 type Events = { [K: string]: Props }
 
 export function useTinybird<E extends Events = any>() {
   return function <N extends keyof E>(
     eventName: N,
-    ...rest: EventOptionsTuple<E[N]>
+    props?: Props
   ) {
-    return (window as any).tinybird?.(eventName, rest[0])
+    return (window as any).tinybird?.(eventName, props)
   }
 }
