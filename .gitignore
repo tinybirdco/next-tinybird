@@ -22,3 +22,6 @@ yarn-error.log*
 
 resources/*_data
 resources/*.aup
+
+# vscode
+.vscode/settings.json
