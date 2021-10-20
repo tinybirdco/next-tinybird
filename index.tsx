@@ -6,8 +6,8 @@ const tinybirdTrackerURL = 'https://cdn.tinybird.co/static/js/t.js'
 
 export default function TinybirdProvider(props: {
   api?: string
-  dataSource: string
-  token: string
+  dataSource?: string
+  token?: string
   trackerURL?: string
   children: ReactNode | ReactNode[]
 }) {
