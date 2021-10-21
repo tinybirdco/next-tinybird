@@ -12,7 +12,7 @@ It offers a Provider to configure the Tinybird tracker script and a hook for sen
 
 ## Getting started
 
-### Prerequisite - Creating the datasource
+### Prerequisite - Creating the Data Source
 
 Before sending any event to Tinybird, you will need a [Data Source](https://docs.tinybird.co/main-concepts.html#data-sources) to store those events.
 
@@ -27,7 +27,7 @@ The default properties we send are:
 | session_start | DateTime | Timestamp when the tracker was instantiated on a page |
 | uuid          | String   | An automatically generated uuid to track a given user through different pages |
 
-**Using the API to create the datasource**
+**Using the API to create the Data Source**
 
 To make the API call, you will need to provide three things:
 1. Your Auth Token that allows creating Data Sources.
