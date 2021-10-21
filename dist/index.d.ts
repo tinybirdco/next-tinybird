@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 export default function TinybirdProvider(props: {
-    api?: string;
-    dataSource?: string;
-    token?: string;
+    dataSource: string;
+    token: string;
+    apiUrl?: string;
     trackerURL?: string;
     children: ReactNode | ReactNode[];
 }): JSX.Element;

@@ -5,9 +5,9 @@ const tinybirdDomain = 'https://api.tinybird.co'
 const tinybirdTrackerURL = 'https://cdn.tinybird.co/static/js/t.js'
 
 export default function TinybirdProvider(props: {
-  api?: string
-  dataSource?: string
-  token?: string
+  dataSource: string
+  token: string
+  apiUrl?: string
   trackerURL?: string
   children: ReactNode | ReactNode[]
 }) {
@@ -18,7 +18,7 @@ export default function TinybirdProvider(props: {
           async
           data-token={props.token}
           data-source={props.dataSource}
-          data-api={props.api || tinybirdDomain}
+          data-api={props.apiUrl || tinybirdDomain}
           src={props.trackerURL || tinybirdTrackerURL}
         />
         <script
