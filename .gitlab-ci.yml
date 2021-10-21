@@ -1,0 +1,21 @@
+image: node:12
+
+stages:
+  - deploy
+
+before_script:
+  - npm install
+
+cache:
+  paths:
+    - node_modules/
+
+publish:
+  stage: deploy
+  only:
+    - tags
+    - triggers
+  script:
+    - npm run build
+    - npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+    - npm publish --access public
