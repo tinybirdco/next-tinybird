@@ -22,7 +22,6 @@ The default properties we send are:
 
 | Property      | Type     | Description                                           |
 |---------------|----------|-------------------------------------------------------|
-| url           | String   | The URL of the page where the event took place.       |
 | event         | String   | The name of the event                                 |
 | timestamp     | DateTime | Timestamp of the event                                |
 | session_start | DateTime | Timestamp when the tracker was instantiated on a page |
@@ -63,7 +62,7 @@ tinybird('click', { id: 'buy-button', userEmail: 'johndoe@doe.com', section: 'sh
 
 The schema needed for the default properties plus that info is
 ```
-url String `json:$.url`, event String `json:$.event`, timestamp DateTime `json:$.timestamp`, session_start String `json:$.session_start`, uuid String `json:$.uuid`, id String `json:$.id`, userEmail String `json:$.userEmail`, section String `json:$.section`
+schema:event String `json:$.event`, timestamp DateTime `json:$.timestamp`, session_start String `json:$.session_start`, uuid String `json:$.uuid`, id String `json:$.id`, userEmail String `json:$.userEmail`, section String `json:$.section`
 ``` 
 
 As you can see, the template is `{name of column} {type} {jsonpath}`
@@ -87,7 +86,7 @@ curl \
   -d 'mode=create' \
   -d 'format=ndjson' \
   -d 'name={YOUR_DATASOURCE_NAME}' \
-  --data-urlencode 'schema=url String `json:$.url`, event String `json:$.event`, timestamp DateTime `json:$.timestamp`, session_start String `json:$.session_start`, uuid String `json:$.uuid`, id String `json:$.id`, userEmail String `json:$.userEmail`, section Nullable(String) `json:$.section`' \
+  --data-urlencode 'schema=event String `json:$.event`, timestamp DateTime `json:$.timestamp`, session_start String `json:$.session_start`, uuid String `json:$.uuid`, id String `json:$.id`, userEmail String `json:$.userEmail`, section Nullable(String) `json:$.section`' \
   https://api.tinybird.co/v0/datasources
 ```
 
