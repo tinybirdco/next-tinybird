@@ -1,6 +1,6 @@
 {
   "name": "@tinybirdco/next-tinybird",
-  "version": "0.0.1",
+  "version": "0.0.1b",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
