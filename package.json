@@ -17,7 +17,9 @@
   ],
   "scripts": {
     "start": "rollup -c -w",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "peerDependencies": {
     "next": "^11.0.0",
@@ -25,23 +27,26 @@
     "react-dom": "^17.0.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.2",
     "@types/node": "^15.12.2",
     "@types/react": "^17.0.11",
+    "babel-jest": "^27.3.1",
+    "jest": "^27.3.1",
+    "jest-environment-jsdom": "^27.3.1",
+    "jsdom": "^18.0.0",
+    "jsdom-global": "^3.0.2",
     "next": "11.0.0",
     "prettier": "^2.3.1",
     "react": "17.0.2",
+    "react-addons-test-utils": "^15.6.2",
     "react-dom": "17.0.2",
     "rollup": "^2.52.1",
     "rollup-plugin-typescript2": "^0.30.0",
     "typescript": "^4.3.4"
-  },
-  "prettier": {
-    "arrowParens": "avoid",
-    "trailingComma": "none",
-    "singleQuote": true,
-    "printWidth": 85,
-    "semi": false,
-    "tabWidth": 2,
-    "endOfLine": "auto"
   }
 }
