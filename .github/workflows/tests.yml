@@ -1,7 +1,5 @@
 name: tests
 on: push
-name: tests
-on: push
 
 jobs:
   tests:
@@ -12,4 +10,3 @@ jobs:
         with:
           node-version: 12
       - run: npm run test
-
