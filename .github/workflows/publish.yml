@@ -5,7 +5,10 @@ on:
       - '*'
 
 jobs:
+  call-tests:
+    uses: tinybirdco/next-tinybird/.github/workflows/tests.yml@main
   publish:
+    needs: call-tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
