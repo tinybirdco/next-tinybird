@@ -1,0 +1,7 @@
+name: push
+
+on: push
+
+jobs:
+  call-tests:
+    uses: tinybirdco/next-tinybird/.github/workflows/tests@main
